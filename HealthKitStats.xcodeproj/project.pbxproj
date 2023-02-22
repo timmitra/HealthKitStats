@@ -17,6 +17,7 @@
 		2AAE227C29A5E41400B75F0B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE227B29A5E41400B75F0B /* Date+Extension.swift */; };
 		31B63CA529A6964800974F57 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B63CA429A6964800974F57 /* ChartView.swift */; };
 		31B63CA729A6AE7E00974F57 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B63CA629A6AE7E00974F57 /* DetailViewModel.swift */; };
+		31B63CA929A6B38800974F57 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B63CA829A6B38800974F57 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2AAE227B29A5E41400B75F0B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		31B63CA429A6964800974F57 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		31B63CA629A6AE7E00974F57 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewModel.swift; path = HealthKitStats/Views/DetailViewModel.swift; sourceTree = SOURCE_ROOT; };
+		31B63CA829A6B38800974F57 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				2AAE226229A5D57A00B75F0B /* ContentView.swift */,
 				31B63CA429A6964800974F57 /* ChartView.swift */,
+				31B63CA829A6B38800974F57 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AAE226329A5D57A00B75F0B /* ContentView.swift in Sources */,
+				31B63CA929A6B38800974F57 /* DetailView.swift in Sources */,
 				2AAE227829A5DD4100B75F0B /* HealthStat.swift in Sources */,
 				2AAE226129A5D57A00B75F0B /* HealthKitStatsApp.swift in Sources */,
 				31B63CA529A6964800974F57 /* ChartView.swift in Sources */,
