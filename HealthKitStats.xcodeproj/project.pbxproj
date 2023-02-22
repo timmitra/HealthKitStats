@@ -19,6 +19,7 @@
 		2AAE226229A5D57A00B75F0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2AAE226429A5D57B00B75F0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AAE226729A5D57B00B75F0B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2AAE226E29A5D69400B75F0B /* HealthKitStats.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitStats.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +52,12 @@
 		2AAE225F29A5D57A00B75F0B /* HealthKitStats */ = {
 			isa = PBXGroup;
 			children = (
-				2AAE226029A5D57A00B75F0B /* HealthKitStatsApp.swift */,
-				2AAE226229A5D57A00B75F0B /* ContentView.swift */,
-				2AAE226429A5D57B00B75F0B /* Assets.xcassets */,
+				2AAE227429A5D76700B75F0B /* AppShared */,
+				2AAE227329A5D75300B75F0B /* Models */,
+				2AAE227229A5D72D00B75F0B /* View Models */,
+				2AAE227129A5D71300B75F0B /* Views */,
+				2AAE227029A5D6DA00B75F0B /* App */,
+				2AAE226F29A5D6BA00B75F0B /* Helpers */,
 				2AAE226629A5D57B00B75F0B /* Preview Content */,
 			);
 			path = HealthKitStats;
@@ -65,6 +69,52 @@
 				2AAE226729A5D57B00B75F0B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2AAE226F29A5D6BA00B75F0B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2AAE227029A5D6DA00B75F0B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2AAE226029A5D57A00B75F0B /* HealthKitStatsApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2AAE227129A5D71300B75F0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2AAE226229A5D57A00B75F0B /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AAE227229A5D72D00B75F0B /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		2AAE227329A5D75300B75F0B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2AAE227429A5D76700B75F0B /* AppShared */ = {
+			isa = PBXGroup;
+			children = (
+				2AAE226E29A5D69400B75F0B /* HealthKitStats.entitlements */,
+				2AAE226429A5D57B00B75F0B /* Assets.xcassets */,
+			);
+			path = AppShared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,12 +314,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HealthKitStats/AppShared/HealthKitStats.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthKitStats/Preview Content\"";
 				DEVELOPMENT_TEAM = 476QK54UU2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Need access to share health with friends";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -293,12 +345,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HealthKitStats/AppShared/HealthKitStats.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthKitStats/Preview Content\"";
 				DEVELOPMENT_TEAM = 476QK54UU2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Need access to share health with friends";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
