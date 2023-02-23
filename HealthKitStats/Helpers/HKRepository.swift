@@ -53,7 +53,7 @@ final class HKRepository {
     query = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: predicate, options: .cumulativeSum,anchorDate: anchorDate, intervalComponents: dailyComponent)
     query?.initialResultsHandler = { query, statistics, error in
       statistics?.enumerateStatistics(from: startDate, to: endDate, with: { stats, _ in
-        let stat = HealthStat(stat: stats.sumQuantity(), date: startDate)
+        let stat = HealthStat(stat: stats.sumQuantity(), date: stats.startDate)
         healthStats.append(stat)
       })
       
