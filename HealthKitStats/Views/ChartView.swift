@@ -6,34 +6,23 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ChartView: View {
     
     let values: [Int]
     let labels: [String]
     let xAxisLables: [String]
-    
+      
     var body: some View {
-        GeometryReader { geo in
-            HStack(alignment: .bottom) {
-                ForEach(0..<values.count) { idx in
-                    let max = values.max() ?? 0
-                    VStack {
-                        Text(labels[idx])
-                            .font(.caption)
-                            .rotationEffect(.degrees(-60))
-                        RoundedRectangle(cornerRadius: 5)
-                            .fill(Color.orange)
-                            .frame(width:20, height: CGFloat(values[idx]) / CGFloat(max) * geo.size.height * 0.6)
-                        Text(xAxisLables[idx])
-                            .font(.caption)
-                    }
-                }
-            }.frame(maxWidth:.infinity, maxHeight: .infinity)
-                .background(Color.primary.opacity(0.2))
-                .cornerRadius(10)
-                .padding(.bottom, 20)
+      Chart() {
+        ForEach(0..<values.count, id: \.self ) { idx in
+          BarMark (
+            x: .value("Date", labels[idx]),
+            y: .value("Total", values[idx])
+          ).foregroundStyle(Color(.orange))
         }
+      }.background(Color.primary.opacity(0.2))
     }
 }
 
