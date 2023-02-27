@@ -18,7 +18,7 @@ struct ChartView: View {
       Chart() {
         ForEach(0..<values.count, id: \.self ) { idx in
           BarMark (
-            x: .value("Date", labels[idx]),
+            x: .value("Date", xAxisLabels[idx]),
             y: .value("Total", values[idx])
           ).foregroundStyle(Color(.orange))
         }
