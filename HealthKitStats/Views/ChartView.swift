@@ -12,7 +12,7 @@ struct ChartView: View {
     
     let values: [Int]
     let labels: [String]
-    let xAxisLables: [String]
+    let xAxisLabels: [String]
       
     var body: some View {
       Chart() {
@@ -31,6 +31,6 @@ struct ChartView_Previews: PreviewProvider {
         let values = [213, 343, 3, 3, 344, 435, 342, 30]
         let labels = ["213", "343", "3", "3", "344", "435", "342", "30"]
         let xAxisValues = ["May 30", "May 31", "June 1", "June 2", "June 3", "June 4", "June 5", "June 6"]
-        ChartView(values: values, labels: labels, xAxisLables: xAxisValues)
+        ChartView(values: values, labels: labels, xAxisLabels: xAxisValues)
     }
 }

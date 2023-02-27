@@ -23,7 +23,7 @@ struct DetailView: View {
     var body: some View {
         ChartView(values: viewModel.stats.map{ viewModel.value(from: $0.stat).value },
                   labels: viewModel.stats.map{ viewModel.value(from: $0.stat).desc },
-                  xAxisLables: viewModel.stats.map{ DetailViewModel.dateFormatter.string(from: $0.date)})
+                  xAxisLabels: viewModel.stats.map{ DetailViewModel.dateFormatter.string(from: $0.date)})
         
         List(viewModel.stats) { stat in
             VStack(alignment: .leading) {
