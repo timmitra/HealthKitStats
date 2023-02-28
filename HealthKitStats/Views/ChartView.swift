@@ -21,6 +21,10 @@ struct ChartView: View {
             x: .value("Date", xAxisLabels[idx]),
             y: .value("Total", values[idx])
           ).foregroundStyle(Color(.orange))
+            .annotation {
+              Text(String(labels[idx]))
+                .font(.caption)
+            }
         }
       }.background(Color.primary.opacity(0.2))
     }
