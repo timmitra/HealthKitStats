@@ -17,7 +17,8 @@ final class HKRepository {
     HKObjectType.quantityType(forIdentifier: .appleMoveTime)!,
     HKObjectType.quantityType(forIdentifier: .appleStandTime)!,
     HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-    HKObjectType.quantityType(forIdentifier: .stepCount)!
+    HKObjectType.quantityType(forIdentifier: .stepCount)!,
+    HKObjectType.quantityType(forIdentifier: .bodyMass)!
   ])
   
   var query: HKStatisticsCollectionQuery?
@@ -49,8 +50,12 @@ final class HKRepository {
     var healthStats = [HealthStat]()
     
     let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
-    
-    query = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: predicate, options: .cumulativeSum,anchorDate: anchorDate, intervalComponents: dailyComponent)
+    if (category != "bodyMass") {
+      query = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: predicate, options: .cumulativeSum,anchorDate: anchorDate, intervalComponents: dailyComponent)
+    } else {
+      let mass = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
+      query = HKStatisticsCollectionQuery(quantityType: mass, quantitySamplePredicate: predicate, anchorDate: anchorDate, intervalComponents: dailyComponent)
+    }
     query?.initialResultsHandler = { query, statistics, error in
       statistics?.enumerateStatistics(from: startDate, to: endDate, with: { stats, _ in
         let stat = HealthStat(stat: stats.sumQuantity(), date: stats.startDate)
@@ -80,6 +85,8 @@ final class HKRepository {
       return .distanceWalkingRunning
     case "stepCount":
       return .stepCount
+    case "bodyMass":
+      return .bodyMass
     default:
       return .stepCount
     }
