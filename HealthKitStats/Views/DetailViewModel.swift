@@ -49,6 +49,9 @@ final class DetailViewModel: ObservableObject {
         } else if stat.is(compatibleWith: .minute()) {
             let value = stat.doubleValue(for: .minute())
             return (Int(value), stat.description)
+        } else if stat.is(compatibleWith: .pound()) {
+            let value = stat.doubleValue(for: .pound())
+            return (Int(value), stat.description)
         }
         return (0, "")
     }
