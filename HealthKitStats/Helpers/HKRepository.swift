@@ -53,7 +53,7 @@ final class HKRepository {
     if (category != "bodyMass") {
       query = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: predicate, options: .cumulativeSum,anchorDate: anchorDate, intervalComponents: dailyComponent)
     } else {
-      let mass = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
+      let mass = HKObjectType.quantityType(forIdentifier: .bodyMass)!
       query = HKStatisticsCollectionQuery(quantityType: mass, quantitySamplePredicate: predicate, anchorDate: anchorDate, intervalComponents: dailyComponent)
     }
     query?.initialResultsHandler = { query, statistics, error in
