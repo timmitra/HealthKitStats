@@ -18,7 +18,8 @@ struct Activity: Identifiable {
       Activity(id: "appleExerciseTime", name: "Exercise Time", image: "⏳"),
       Activity(id: "appleStandTime", name: "Stand Time", image: "🧍‍♂️"),
       Activity(id: "distanceWalkingRunning", name: "Distance Walking/Running", image: "🏃‍♂️"),
-      Activity(id: "stepCount", name: "Step Count", image: "🚶‍♂️")
+      Activity(id: "stepCount", name: "Step Count", image: "🚶‍♂️"),
+      Activity(id: "bodyMass", name: "Weight", image: "𐄷")
     ]
   }
 }
